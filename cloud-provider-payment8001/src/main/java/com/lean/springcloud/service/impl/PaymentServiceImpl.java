@@ -6,6 +6,7 @@ import com.lean.springcloud.service.PaymentService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author: ArronZY
@@ -22,5 +23,9 @@ public class PaymentServiceImpl implements PaymentService{
 
     public Payment getPaymentById(Long id){
         return paymentDao.getPaymentById(id);
+    }
+
+    public List<Payment> getAllPayment(){
+        return paymentDao.getAllPayment();
     }
 }

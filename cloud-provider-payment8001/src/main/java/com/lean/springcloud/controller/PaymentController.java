@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author: ArronZY
@@ -46,5 +47,17 @@ public class PaymentController {
             return new CommonResult(444,"没有对应记录，查询ID："+id,null);
         }
 
+    }
+
+    @GetMapping(value = "/payment/getAll")
+    public CommonResult getAllPayment(){
+        List<Payment> payment = paymentService.getAllPayment();
+        log.info("---查询结果"+payment);
+
+        if(payment.size()>0){
+            return new CommonResult(200,"查询成功",payment);
+        }else{
+            return new CommonResult(555,"没有查询记录，该列表未空",null);
+        }
     }
 }
