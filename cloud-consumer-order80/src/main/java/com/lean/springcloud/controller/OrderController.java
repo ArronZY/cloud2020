@@ -34,4 +34,10 @@ public class OrderController {
         log.info("---开始调用查询----id:"+id);
         return restTemplate.getForObject(PAYMENT_URL+"payment/get/"+id,CommonResult.class);
     }
+
+    @GetMapping("/consumer/payment/getAll")
+    public CommonResult<Payment> getAllPayment(){
+        log.info("---开始调用查询全部----");
+        return restTemplate.getForObject(PAYMENT_URL+"payment/getAll",CommonResult.class);
+    }
 }
