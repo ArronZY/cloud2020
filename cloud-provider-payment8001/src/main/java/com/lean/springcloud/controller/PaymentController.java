@@ -61,7 +61,7 @@ public class PaymentController {
         List<Payment> payment = paymentService.getAllPayment();
         log.info("---查询结果"+payment);
 
-        if(payment.size()>0){
+        if(!payment.isEmpty()){
             return new CommonResult(200,"查询成功,serverPort："+serverPort,payment);
         }else{
             return new CommonResult(555,"没有查询记录，该列表未空",null);
