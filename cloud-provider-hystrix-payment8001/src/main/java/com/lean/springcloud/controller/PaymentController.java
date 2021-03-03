@@ -22,14 +22,14 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
-    @GetMapping("/patment/hystrix/ok/{id}")
+    @GetMapping("/payment/hystrix/ok/{id}")
     public String paymentInfo_ok(@PathVariable("id") Integer id){
         String result = paymentServcie.paymentInfo_ok(id);
         log.info("*******result:"+result);
         return result;
     }
 
-    @GetMapping("/patment/hystrix/timeout/{id}")
+    @GetMapping("/payment/hystrix/timeout/{id}")
     public String paymentInfo_TimeOut(@PathVariable("id") Integer id){
         String result = paymentServcie.paymentInfo_TimeOut(id);
         log.info("*******result:"+result);

@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Component
 @FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT")
 public interface PaymentHystrixService {
-    @GetMapping("/patment/hystrix/ok/{id}")
-    public String paymentInfo_OK(@PathVariable("id") Integer id);
+    @GetMapping("/payment/hystrix/ok/{id}")
+    public String paymentInfo_ok(@PathVariable("id") Integer id);
 
-    @GetMapping("payment/hystrix/tomeout/{id}")
+    @GetMapping("/payment/hystrix/timeout/{id}")
     public String paymentInfo_TimeOut(@PathVariable("id") Integer id);
 }
