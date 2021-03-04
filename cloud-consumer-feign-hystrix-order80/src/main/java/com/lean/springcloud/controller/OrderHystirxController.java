@@ -3,7 +3,6 @@ package com.lean.springcloud.controller;
 import com.lean.springcloud.service.PaymentHystrixService;
 import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,7 +24,7 @@ public class OrderHystirxController {
     @GetMapping("/consumer/payment/hystrix/ok/{id}")
     public String paymentInfo_ok(@PathVariable("id") Integer id)
     {
-        String result = paymentHystrixService.paymentInfo_ok(id);
+        String result = paymentHystrixService.paymentInfo_OK(id);
         return result;
     }
 
